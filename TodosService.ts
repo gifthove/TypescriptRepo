@@ -18,14 +18,26 @@ class TodosService {
     }
     
     clearCompleted(){
-        let completed = this.todos.filter(function(x) {
+        var completed = this.todos.filter(function(x) {
             return x.completed;
         });
         
-        let _this = this;
+        var _this = this;
         
         completed.forEach(function(x){
-            _this.remove(x);
+           _this.remove(x);
         });
+    }
+    
+    remove(todo){
+       var instance = this._find(todo);
+       this.todos.splice(this.todos.indexOf(instance),1);
+    }
+    
+    _find(todoId){
+        var filtered = this.todos.filter(function(x) {
+            return x.id == todoId;
+        });
+        return filtered.length ? filtered[0] : null;
     }
 }
