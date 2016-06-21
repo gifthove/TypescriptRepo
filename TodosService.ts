@@ -16,4 +16,8 @@ class TodosService {
         ];
         
     }
+    
+    clearCompleted(){
+        
+    }
 }
