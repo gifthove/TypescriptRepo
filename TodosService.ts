@@ -34,7 +34,7 @@ class TodosService {
        this.todos.splice(this.todos.indexOf(instance),1);
     }
     
-    _find(todoId){
+   private _find(todoId){
         var filtered = this.todos.filter(function(x) {
             return x.id == todoId;
         });
